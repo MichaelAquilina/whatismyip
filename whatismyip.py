@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 def main():
     r = requests.get('http://www.whatismyip.com')
 
-    soup = BeautifulSoup(r.text)
+    soup = BeautifulSoup(r.text, 'lxml')
 
     ip_address = ''
     for span in soup.find('div', 'the-ip'):
